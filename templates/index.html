@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+  <link rel="stylesheet"  href="{{ url_for('static', filename='w3.css') }}">
+ <style type="text/css">
+ 
+input[type=number],input[type=float],select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 50px;
+    width:50%;
+    margin:auto;
+}
+
+label{
+     
+     font-size:23px;  
+        
+        }
+ 
+  </style>
+</head>
+
+<body style="background-color:grey">
+<br>
+<div class='w3-padding  w3-center'><h1>Nigeria Recruitment Portal</h1></div>
+  
+  
+  
+  
+  <div>
+     <form class="w3-container w3-card-2" action="{{ url_for('predict')}}" method="POST" style="width: 100%">
+      
+      <label>Sex</label>
+      <select  name="Sex"  required="required" >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+      
+      
+      <label >Age</label>
+      <input  name="Age"  required="required" type="number">
+      
+      
+      <br>
+    <label >Height</label>
+        <input  name="Height"  required="required" type="float">
+      
+      <label>Fitness</label>
+      <select  name="Fitness"  required="required" >
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        
+        
+          <label>Credentials</label>
+          <select  name="Credentials"  required="required" >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+
+ <label >Exercise Score</label>
+ <input  name="exercise score"  required="required" type="number">
+     
+      <input type="submit" value="Predict">
+    </form>
+  </div>
+  
+   
+</body>
+
+
+
+
+
+</html>
